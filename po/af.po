@@ -2,541 +2,815 @@
 # Copyright (C) 2002 COPYRIGHTHOLDER
 # This file is distributed under the same license as the atk package.
 # Stefan <servine_lauvi@hotmail.com>, 2003.
+# Pieter Schoeman <pieter@sonbesie.co.za>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atk cvs\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 15:05+0800\n"
-"PO-Revision-Date: 2002-12-05 16:08+0100\n"
-"Last-Translator: Stefan Lubbersen <servine_lauvi@hotmail.com>\n"
-"Language-Team: Afrikaans <servine_lauvi@hotmail.com>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=atk&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-09-11 09:07+0000\n"
+"PO-Revision-Date: 2018-01-29 13:24+0200\n"
+"Last-Translator: Pieter Schoeman <pieter@sonbesie.co.za>\n"
+"Language-Team: Afrikaans <pieter@sonbesie.co.za>\n"
 "Language: af\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.3\n"
 
-#: atk/atkhyperlink.c:103
+#: atk/atkhyperlink.c:126
 msgid "Selected Link"
-msgstr "Geselekteerde verwysing"
+msgstr "Geselekteerde skakel"
 
-#: atk/atkhyperlink.c:104
+#: atk/atkhyperlink.c:127
 msgid "Specifies whether the AtkHyperlink object is selected"
-msgstr "Gee aan of die AtkHyperLink objek geselekteer is"
+msgstr "Gee aan of die AtkHyperLink voorwerp geselekteer is"
 
-#: atk/atkhyperlink.c:110
+#: atk/atkhyperlink.c:133
 msgid "Number of Anchors"
 msgstr "Aantal ankers"
 
-#: atk/atkhyperlink.c:111
+#: atk/atkhyperlink.c:134
 msgid "The number of anchors associated with the AtkHyperlink object"
-msgstr "Die aantal ankers wat met die AtkHyperlink objek is geassosieer"
+msgstr "Die aantal ankers wat met die AtkHyperlink voorwerp geassosieer is"
 
-#: atk/atkhyperlink.c:119
+#: atk/atkhyperlink.c:142
 msgid "End index"
 msgstr "Einde indeks"
 
-#: atk/atkhyperlink.c:120
+#: atk/atkhyperlink.c:143
 msgid "The end index of the AtkHyperlink object"
-msgstr "Einde van die indeks van die AtkHyperlink objek"
+msgstr "Einde van die indeks van die AtkHyperlink voorwerp"
 
-#: atk/atkhyperlink.c:128
+#: atk/atkhyperlink.c:151
 msgid "Start index"
 msgstr "Begin indeks"
 
-#: atk/atkhyperlink.c:129
+#: atk/atkhyperlink.c:152
 msgid "The start index of the AtkHyperlink object"
-msgstr "Begin van die indeks van die AtkHyperlink objek"
+msgstr "Begin van die indeks van die AtkHyperlink voorwerp"
 
-#: atk/atkobject.c:74
+#: atk/atkobject.c:97
 msgid "invalid"
 msgstr "ongeldig"
 
-#: atk/atkobject.c:75
-#, fuzzy
+#: atk/atkobject.c:98
 msgid "accelerator label"
-msgstr "sneltoetslabel"
+msgstr "versneletiket"
 
-#: atk/atkobject.c:76
+#: atk/atkobject.c:99
 msgid "alert"
 msgstr "alarm"
 
-#: atk/atkobject.c:77
+#: atk/atkobject.c:100
 msgid "animation"
 msgstr "animasie"
 
-#: atk/atkobject.c:78
+#: atk/atkobject.c:101
 msgid "arrow"
 msgstr "pyl"
 
-#: atk/atkobject.c:79
+#: atk/atkobject.c:102
 msgid "calendar"
 msgstr "kalender"
 
-#: atk/atkobject.c:80
+#: atk/atkobject.c:103
 msgid "canvas"
 msgstr "kanvas"
 
-#: atk/atkobject.c:81
+#: atk/atkobject.c:104
 msgid "check box"
 msgstr "aankruisvakkie"
 
-#: atk/atkobject.c:82
+#: atk/atkobject.c:105
 msgid "check menu item"
-msgstr "aankruis-spyskaart-item"
+msgstr "aankruis-kieslys-item"
 
-#: atk/atkobject.c:83
+#: atk/atkobject.c:106
 msgid "color chooser"
 msgstr "kleurkieser"
 
-#: atk/atkobject.c:84
+#: atk/atkobject.c:107
 msgid "column header"
 msgstr "kolomtitel"
 
-#: atk/atkobject.c:85
+#: atk/atkobject.c:108
 msgid "combo box"
 msgstr "keusevak"
 
-#: atk/atkobject.c:86
+#: atk/atkobject.c:109
 msgid "dateeditor"
 msgstr "datum bewerk"
 
-#: atk/atkobject.c:87
+#: atk/atkobject.c:110
 msgid "desktop icon"
-msgstr "burobladikoon"
+msgstr "werkskermikoon"
 
-#: atk/atkobject.c:88
+#: atk/atkobject.c:111
 msgid "desktop frame"
-msgstr "buroblad-frame"
+msgstr "werkskermraam"
 
-#: atk/atkobject.c:89
+#: atk/atkobject.c:112
 msgid "dial"
 msgstr "bel"
 
-#: atk/atkobject.c:90
+#: atk/atkobject.c:113
 msgid "dialog"
 msgstr "dialoogvenster"
 
-#: atk/atkobject.c:91
+#: atk/atkobject.c:114
 msgid "directory pane"
 msgstr "mappepaneel"
 
-#: atk/atkobject.c:92
+#: atk/atkobject.c:115
 msgid "drawing area"
 msgstr "tekengebied"
 
-#: atk/atkobject.c:93
+#: atk/atkobject.c:116
 msgid "file chooser"
-msgstr "bestands-kieser"
+msgstr "lêer-kieser"
 
-#: atk/atkobject.c:94
+#: atk/atkobject.c:117
 msgid "filler"
 msgstr "vuller"
 
 #. I know it looks wrong but that is what Java returns
-#: atk/atkobject.c:96
+#: atk/atkobject.c:119
 msgid "fontchooser"
 msgstr "lettertiepe-kieser"
 
-#: atk/atkobject.c:97
+#: atk/atkobject.c:120
 msgid "frame"
-msgstr "frame"
+msgstr "raam"
 
-#: atk/atkobject.c:98
+#: atk/atkobject.c:121
 msgid "glass pane"
 msgstr "glaspaneel"
 
-#: atk/atkobject.c:99
+#: atk/atkobject.c:122
 msgid "html container"
 msgstr "html-houer"
 
-#: atk/atkobject.c:100
+#: atk/atkobject.c:123
 msgid "icon"
 msgstr "ikoon"
 
-#: atk/atkobject.c:101
+#: atk/atkobject.c:124
 msgid "image"
-msgstr "afbeelding"
+msgstr "beeld"
 
-#: atk/atkobject.c:102
+#: atk/atkobject.c:125
 msgid "internal frame"
-msgstr "interne frame"
+msgstr "interne raam"
 
-#: atk/atkobject.c:103
+#: atk/atkobject.c:126
 msgid "label"
-msgstr "label"
+msgstr "etiket"
 
-#: atk/atkobject.c:104
+#: atk/atkobject.c:127
 msgid "layered pane"
 msgstr "gelaagde paneel"
 
-#: atk/atkobject.c:105
+#: atk/atkobject.c:128
 msgid "list"
 msgstr "lys"
 
-#: atk/atkobject.c:106
+#: atk/atkobject.c:129
 msgid "list item"
 msgstr "lys-item"
 
-#: atk/atkobject.c:107
+#: atk/atkobject.c:130
 msgid "menu"
-msgstr "spyskaart"
+msgstr "kieslys"
 
-#: atk/atkobject.c:108
+#: atk/atkobject.c:131
 msgid "menu bar"
-msgstr "spyskaart-balk"
+msgstr "kieslys-balk"
 
-#: atk/atkobject.c:109
+#: atk/atkobject.c:132
 msgid "menu item"
-msgstr "spyskaart-item"
+msgstr "kieslys-item"
 
-#: atk/atkobject.c:110
+#: atk/atkobject.c:133
 msgid "option pane"
 msgstr "opsies-paneel"
 
-#: atk/atkobject.c:111
+#: atk/atkobject.c:134
 msgid "page tab"
-msgstr "bladsy-tabblad"
+msgstr "bladsy-oortjie"
 
-#: atk/atkobject.c:112
+#: atk/atkobject.c:135
 msgid "page tab list"
-msgstr "bladsy-tabbladlys"
+msgstr "bladsy-oortjielys"
 
-#: atk/atkobject.c:113
+#: atk/atkobject.c:136
 msgid "panel"
 msgstr "paneel"
 
-#: atk/atkobject.c:114
+#: atk/atkobject.c:137
 msgid "password text"
 msgstr "wagwoordteks"
 
-#: atk/atkobject.c:115
+#: atk/atkobject.c:138
 msgid "popup menu"
-msgstr "popop-spyskaart"
+msgstr "popop-kieslys"
 
-#: atk/atkobject.c:116
+#: atk/atkobject.c:139
 msgid "progress bar"
-msgstr "voorgangsbalk"
+msgstr "vorderingsbalk"
 
-#: atk/atkobject.c:117
+#: atk/atkobject.c:140
 msgid "push button"
 msgstr "drukknop"
 
-#: atk/atkobject.c:118
+#: atk/atkobject.c:141
 msgid "radio button"
 msgstr "radioknop"
 
-#: atk/atkobject.c:119
+#: atk/atkobject.c:142
 msgid "radio menu item"
-msgstr "radio-spyskaart-item"
+msgstr "radio-kieslys-item"
 
-#: atk/atkobject.c:120
+#: atk/atkobject.c:143
 msgid "root pane"
 msgstr "hoofpaneel"
 
-#: atk/atkobject.c:121
+#: atk/atkobject.c:144
 msgid "row header"
 msgstr "rytitel"
 
-#: atk/atkobject.c:122
+#: atk/atkobject.c:145
 msgid "scroll bar"
 msgstr "skuifbalk"
 
-#: atk/atkobject.c:123
+#: atk/atkobject.c:146
 msgid "scroll pane"
 msgstr "skuifpaneel"
 
-#: atk/atkobject.c:124
+#: atk/atkobject.c:147
 msgid "separator"
 msgstr "skeiding"
 
-#: atk/atkobject.c:125
+#: atk/atkobject.c:148
 msgid "slider"
 msgstr "skuiwer"
 
-#: atk/atkobject.c:126
+#: atk/atkobject.c:149
 msgid "split pane"
 msgstr "gedeelde paneel"
 
-#: atk/atkobject.c:127
+#: atk/atkobject.c:150
 msgid "spin button"
 msgstr "omhoog/omlaag-knop"
 
-#: atk/atkobject.c:128
+#: atk/atkobject.c:151
 msgid "statusbar"
 msgstr "statusbalk"
 
-#: atk/atkobject.c:129
+#: atk/atkobject.c:152
 msgid "table"
 msgstr "tabel"
 
-#: atk/atkobject.c:130
+#: atk/atkobject.c:153
 msgid "table cell"
 msgstr "tabel-sel"
 
-#: atk/atkobject.c:131
+#: atk/atkobject.c:154
 msgid "table column header"
 msgstr "tabelkolomtitel"
 
-#: atk/atkobject.c:132
+#: atk/atkobject.c:155
 msgid "table row header"
 msgstr "tabelrytitel"
 
-#: atk/atkobject.c:133
+#: atk/atkobject.c:156
 msgid "tear off menu item"
-msgstr "afneembaar spyskaart-item"
+msgstr "afskeur kieslys-item"
 
-#: atk/atkobject.c:134
+#: atk/atkobject.c:157
 msgid "terminal"
 msgstr "terminaal"
 
-#: atk/atkobject.c:135
+#: atk/atkobject.c:158
 msgid "text"
 msgstr "teks"
 
-#: atk/atkobject.c:136
+#: atk/atkobject.c:159
 msgid "toggle button"
 msgstr "skakelknop"
 
-#: atk/atkobject.c:137
+#: atk/atkobject.c:160
 msgid "tool bar"
 msgstr "werkbalk"
 
-#: atk/atkobject.c:138
+#: atk/atkobject.c:161
 msgid "tool tip"
 msgstr "hulpballon"
 
-#: atk/atkobject.c:139
+#: atk/atkobject.c:162
 msgid "tree"
 msgstr "boom"
 
-#: atk/atkobject.c:140
+#: atk/atkobject.c:163
 msgid "tree table"
 msgstr "boomtabel"
 
-#: atk/atkobject.c:141
+#: atk/atkobject.c:164
 msgid "unknown"
 msgstr "onbekend"
 
-#: atk/atkobject.c:142
+#: atk/atkobject.c:165
 msgid "viewport"
 msgstr "blikveld"
 
-#: atk/atkobject.c:143
+#: atk/atkobject.c:166
 msgid "window"
 msgstr "venster"
 
-#: atk/atkobject.c:144
+#: atk/atkobject.c:167
 msgid "header"
 msgstr "kop"
 
-#: atk/atkobject.c:145
+#: atk/atkobject.c:168
 msgid "footer"
 msgstr "voet"
 
-#: atk/atkobject.c:146
+#: atk/atkobject.c:169
 msgid "paragraph"
 msgstr "paragraaf"
 
-#: atk/atkobject.c:147
-#, fuzzy
+#: atk/atkobject.c:170
 msgid "ruler"
-msgstr "alarm"
+msgstr "liniaal"
 
-#: atk/atkobject.c:148
+#: atk/atkobject.c:171
 msgid "application"
 msgstr "program"
 
-#: atk/atkobject.c:149
+#: atk/atkobject.c:172
 msgid "autocomplete"
-msgstr "outkompleet"
+msgstr "outomaties invul"
 
-#: atk/atkobject.c:150
+#: atk/atkobject.c:173
 msgid "edit bar"
-msgstr "spyskaart-balk"
+msgstr "redigeer-balk"
 
-#: atk/atkobject.c:151
+#: atk/atkobject.c:174
 msgid "embedded component"
-msgstr ""
+msgstr "ingeboude komponent"
 
-#: atk/atkobject.c:152
+#: atk/atkobject.c:175
 msgid "entry"
-msgstr ""
+msgstr "inskrywing"
 
-#: atk/atkobject.c:153
-#, fuzzy
+#: atk/atkobject.c:176
 msgid "chart"
-msgstr "alarm"
+msgstr "grafiek"
 
-#: atk/atkobject.c:154
-#, fuzzy
+#: atk/atkobject.c:177
 msgid "caption"
-msgstr "program"
+msgstr "onderskrif"
 
-#: atk/atkobject.c:155
-#, fuzzy
+#: atk/atkobject.c:178
 msgid "document frame"
-msgstr "buroblad-frame"
+msgstr "dokument raam"
 
-#: atk/atkobject.c:156
-#, fuzzy
+#: atk/atkobject.c:179
 msgid "heading"
-msgstr "kop"
+msgstr "opskrif"
 
-#: atk/atkobject.c:157
-#, fuzzy
+#: atk/atkobject.c:180
 msgid "page"
-msgstr "afbeelding"
+msgstr "bladsy"
 
-#: atk/atkobject.c:158
+#: atk/atkobject.c:181
 msgid "section"
-msgstr ""
+msgstr "deel"
 
-#: atk/atkobject.c:159
+#: atk/atkobject.c:182
 msgid "redundant object"
-msgstr ""
+msgstr "oortollige voorwerp"
 
-#: atk/atkobject.c:160
-#, fuzzy
+#: atk/atkobject.c:183
 msgid "form"
-msgstr "frame"
+msgstr "vorm"
 
-#: atk/atkobject.c:161
+#: atk/atkobject.c:184
 msgid "link"
-msgstr ""
+msgstr "skakel"
 
-#: atk/atkobject.c:162
+#: atk/atkobject.c:185
 msgid "input method window"
-msgstr ""
+msgstr "invoermetode venster"
 
-#: atk/atkobject.c:488
+#: atk/atkobject.c:186
+#| msgid "table row header"
+msgid "table row"
+msgstr "tabelry"
+
+# Notes:
+# Add Note
+#: atk/atkobject.c:187
+#| msgid "tree table"
+msgid "tree item"
+msgstr "boomitem"
+
+#: atk/atkobject.c:188
+msgid "document spreadsheet"
+msgstr "dokument sigblad"
+
+#: atk/atkobject.c:189
+msgid "document presentation"
+msgstr "dokument voorlegging"
+
+#: atk/atkobject.c:190
+msgid "document text"
+msgstr "dokument teks"
+
+#: atk/atkobject.c:191
+msgid "document web"
+msgstr "dokument web"
+
+#: atk/atkobject.c:192
+msgid "document email"
+msgstr "dokument e-pos"
+
+#: atk/atkobject.c:193
+msgid "comment"
+msgstr "kommentaar"
+
+#: atk/atkobject.c:194
+#| msgid "list"
+msgid "list box"
+msgstr "lysboks"
+
+#: atk/atkobject.c:195
+msgid "grouping"
+msgstr "groepering"
+
+#: atk/atkobject.c:196
+#| msgid "image"
+msgid "image map"
+msgstr "beeldkaart"
+
+#: atk/atkobject.c:197
+#| msgid "animation"
+msgid "notification"
+msgstr "kennisgewing"
+
+#: atk/atkobject.c:198
+#| msgid "menu bar"
+msgid "info bar"
+msgstr "inligtings-balk"
+
+#: atk/atkobject.c:199
+#| msgid "scroll bar"
+msgid "level bar"
+msgstr "vlakbalk"
+
+#: atk/atkobject.c:200
+#| msgid "tool bar"
+msgid "title bar"
+msgstr "titelbalk"
+
+#: atk/atkobject.c:201
+msgid "block quote"
+msgstr "blok aanhaling"
+
+#: atk/atkobject.c:202
+msgid "audio"
+msgstr "klank"
+
+#: atk/atkobject.c:203
+msgid "video"
+msgstr "video"
+
+#: atk/atkobject.c:204
+#| msgid "animation"
+msgid "definition"
+msgstr "definisie"
+
+#: atk/atkobject.c:205
+msgid "article"
+msgstr "artikel"
+
+#: atk/atkobject.c:206
+msgid "landmark"
+msgstr "landmerk"
+
+#: atk/atkobject.c:207
+#| msgid "dialog"
+msgid "log"
+msgstr "opneem"
+
+#: atk/atkobject.c:208
+msgid "marquee"
+msgstr "markiestent"
+
+#: atk/atkobject.c:209
+msgid "math"
+msgstr "wiskunde"
+
+#: atk/atkobject.c:210
+msgid "rating"
+msgstr "gradering"
+
+#: atk/atkobject.c:211
+msgid "timer"
+msgstr "wekker"
+
+#: atk/atkobject.c:212
+msgid "description list"
+msgstr "beskrywing lys"
+
+#: atk/atkobject.c:213
+msgid "description term"
+msgstr "beskrywing term"
+
+#: atk/atkobject.c:214
+msgid "description value"
+msgstr "beskrywing waarde"
+
+#: atk/atkobject.c:372
 msgid "Accessible Name"
-msgstr "Toeganklike naam"
+msgstr "Toeganklikheidsnaam"
 
-#: atk/atkobject.c:489
+#: atk/atkobject.c:373
 msgid "Object instance’s name formatted for assistive technology access"
 msgstr ""
-"Naam van die objek, spesiaal opgemaak vir toegang van ondersteunende "
+"Naam van die voorwerp, spesiaal opgemaak vir toegang van ondersteunende "
 "tegnologie"
 
-#: atk/atkobject.c:495
+#: atk/atkobject.c:379
 msgid "Accessible Description"
-msgstr "Toeganklike beskrywing"
+msgstr "Toeganklikheidsbeskrywing"
 
-#: atk/atkobject.c:496
+#: atk/atkobject.c:380
 msgid "Description of an object, formatted for assistive technology access"
 msgstr ""
-"Beskrywing van die objek, spesiaal opgemaak vir toegang van ondersteunende "
-"tegnologie"
+"Beskrywing van die voorwerp, spesiaal opgemaak vir toegang van "
+"ondersteunende tegnologie"
 
-#: atk/atkobject.c:502
+#: atk/atkobject.c:386
 msgid "Accessible Parent"
-msgstr "Toeganklike ouer"
+msgstr "Toeganklikheidsouer"
 
-#: atk/atkobject.c:503
-msgid "Is used to notify that the parent has changed"
-msgstr "Word gebruik om aan te gee dat die ouer is verander"
+#: atk/atkobject.c:387
+msgid "Parent of the current accessible as returned by atk_object_get_parent()"
+msgstr ""
+"Ouer van die huidige toeganklike soos verskaf deur atk_object_get_parent()"
 
-#: atk/atkobject.c:509
+#: atk/atkobject.c:403
 msgid "Accessible Value"
-msgstr "Toeganklike waarde"
+msgstr "Toeganklikheidswaarde"
 
-#: atk/atkobject.c:510
+#: atk/atkobject.c:404
 msgid "Is used to notify that the value has changed"
 msgstr "Word gebruik om aan te gee dat die waarde is verander"
 
-#: atk/atkobject.c:518
+#: atk/atkobject.c:412
 msgid "Accessible Role"
-msgstr "Toeganklike rol"
+msgstr "Toeganklikheidsrol"
 
-#: atk/atkobject.c:519
+#: atk/atkobject.c:413
 msgid "The accessible role of this object"
-msgstr "Die toeganklike rol van die objek"
+msgstr "Die toeganklike rol van die voorwerp"
 
-#: atk/atkobject.c:527
+#: atk/atkobject.c:421
 msgid "Accessible Layer"
-msgstr "Toeganklike laag"
+msgstr "Toeganklikheidslaag"
 
-#: atk/atkobject.c:528
-#, fuzzy
+#: atk/atkobject.c:422
 msgid "The accessible layer of this object"
-msgstr "Die toeganklike rol van die objek"
+msgstr "Die toeganklikheidslaag van die voorwerp"
 
-#: atk/atkobject.c:536
-#, fuzzy
+#: atk/atkobject.c:430
 msgid "Accessible MDI Value"
-msgstr "Toeganklike waarde"
+msgstr "Toeganklike MDI waarde"
 
-#: atk/atkobject.c:537
-#, fuzzy
+#: atk/atkobject.c:431
 msgid "The accessible MDI value of this object"
-msgstr "Die toeganklike rol van die objek"
+msgstr "Die toeganklike MDI waarde van die voorwerp"
 
-#: atk/atkobject.c:545
+#: atk/atkobject.c:447
 msgid "Accessible Table Caption"
-msgstr "Toegankelijke tabeltitel"
+msgstr "Toegankelike tabeltitel"
 
-#: atk/atkobject.c:546
+#: atk/atkobject.c:448
 msgid ""
 "Is used to notify that the table caption has changed; this property should "
 "not be used. accessible-table-caption-object should be used instead"
 msgstr ""
-"Word gebruik om aan te gee dat die tabeltitel is verander (nie gebruik nie). "
-"U kan beter accessible-table-caption-objek gebruik."
+"Word gebruik om aan te gee dat die tabeltitel verander het (nie gebruik "
+"nie). U kan beter accessible-table-caption-voorwerp gebruik"
 
-#: atk/atkobject.c:552
+#: atk/atkobject.c:462
 msgid "Accessible Table Column Header"
-msgstr "tabelkolomtitel"
+msgstr "Toegankelike tabelkolomtitel"
 
-#: atk/atkobject.c:553
+#: atk/atkobject.c:463
 msgid "Is used to notify that the table column header has changed"
-msgstr "Word gebruik om aan te gee dat die kolomtitel is verander"
+msgstr "Word gebruik om aan te gee dat die tabelkolomtitel verander het"
 
-#: atk/atkobject.c:559
+#: atk/atkobject.c:478
 msgid "Accessible Table Column Description"
-msgstr "Toeganklike kolombeskrywing"
+msgstr "Toeganklike tabelkolombeskrywing"
 
-#: atk/atkobject.c:560
+#: atk/atkobject.c:479
 msgid "Is used to notify that the table column description has changed"
-msgstr "Word gebruik om aan te gee dat die kolombeskrywing is verander"
+msgstr "Word gebruik om aan te gee dat die tabelkolombeskrywing verander het"
 
-#: atk/atkobject.c:566
+#: atk/atkobject.c:494
 msgid "Accessible Table Row Header"
-msgstr "tabelrytitel"
+msgstr "Toeganklike tabelrytitel"
 
-#: atk/atkobject.c:567
+#: atk/atkobject.c:495
 msgid "Is used to notify that the table row header has changed"
-msgstr "Word gebruik om aan te gee dat die rytitel is verander"
+msgstr "Word gebruik om aan te gee dat die tabelrytitel verander het"
 
-#: atk/atkobject.c:573
+#: atk/atkobject.c:509
 msgid "Accessible Table Row Description"
-msgstr "Toeganklike rybeskrywing"
+msgstr "Toeganklike tabelrybeskrywing"
 
-#: atk/atkobject.c:574
+#: atk/atkobject.c:510
 msgid "Is used to notify that the table row description has changed"
-msgstr "Word gebruik om aan te gee dat die rybeskrywing is verander"
+msgstr "Word gebruik om aan te gee dat die tabelrybeskrywing verander het"
 
-#: atk/atkobject.c:580
+#: atk/atkobject.c:516
 msgid "Accessible Table Summary"
 msgstr "Toeganklike tabelsamenvatting"
 
-#: atk/atkobject.c:581
+#: atk/atkobject.c:517
 msgid "Is used to notify that the table summary has changed"
-msgstr "Word gebruik om aan te gee dat die tabelsamenvatting is verander"
+msgstr "Word gebruik om aan te gee dat die tabelsamenvatting verander het"
 
-#: atk/atkobject.c:587
+#: atk/atkobject.c:523
 msgid "Accessible Table Caption Object"
-msgstr "Toeganklik tabeltitelobjek"
+msgstr "Toeganklik tabeltitelvoorwerp"
 
-#: atk/atkobject.c:588
+#: atk/atkobject.c:524
 msgid "Is used to notify that the table caption has changed"
-msgstr "Word gebruik om aan te gee dat die tabeltitel is verander"
+msgstr "Word gebruik om aan te gee dat die tabeltitel verander het"
 
-#: atk/atkobject.c:594
-#, fuzzy
+#: atk/atkobject.c:530
 msgid "Number of Accessible Hypertext Links"
-msgstr "Toeganklike Hypertext aantal verwysings"
+msgstr "Aantal toeganklike Hypertext skakels"
 
-#: atk/atkobject.c:595
+#: atk/atkobject.c:531
 msgid "The number of links which the current AtkHypertext has"
 msgstr "Die huidige aantal verwysings van die huidige AtkHypertext"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a password-strength meter. Note that what such a
+#. * widget presents is controlled by application developers. Thus
+#. * assistive technologies such as screen readers are expected to
+#. * present this string alone or as a token in a list.
+#.
+#: atk/atkvalue.c:194
+msgid "very weak"
+msgstr "baie swak"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a password-strength meter. Note that what such a
+#. * widget presents is controlled by application developers. Thus
+#. * assistive technologies such as screen readers are expected to
+#. * present this string alone or as a token in a list.
+#.
+#: atk/atkvalue.c:201
+msgid "weak"
+msgstr "swak"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a password-strength meter. Note that what such a
+#. * widget presents is controlled by application developers. Thus
+#. * assistive technologies such as screen readers are expected to
+#. * present this string alone or as a token in a list.
+#.
+#: atk/atkvalue.c:208
+#| msgid "table"
+msgid "acceptable"
+msgstr "aanvaarbaar"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a password-strength meter. Note that what such a
+#. * widget presents is controlled by application developers. Thus
+#. * assistive technologies such as screen readers are expected to
+#. * present this string alone or as a token in a list.
+#.
+#: atk/atkvalue.c:215
+msgid "strong"
+msgstr "sterk"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a password-strength meter. Note that what such a
+#. * widget presents is controlled by application developers. Thus
+#. * assistive technologies such as screen readers are expected to
+#. * present this string alone or as a token in a list.
+#.
+#: atk/atkvalue.c:222
+msgid "very strong"
+msgstr "baie sterk"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a volume slider. Note that what such a widget
+#. * presents (e.g. temperature, volume, price) is controlled by
+#. * application developers. Thus assistive technologies such as screen
+#. * readers are expected to present this string alone or as a token in
+#. * a list.
+#.
+#: atk/atkvalue.c:230
+msgid "very low"
+msgstr "baie laag"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a volume slider. Note that what such a widget
+#. * presents (e.g. temperature, volume, price) is controlled by
+#. * application developers. Thus assistive technologies such as screen
+#. * readers are expected to present this string alone or as a token in
+#. * a list.
+#.
+#: atk/atkvalue.c:238
+msgid "medium"
+msgstr "medium"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a volume slider. Note that what such a widget
+#. * presents (e.g. temperature, volume, price) is controlled by
+#. * application developers. Thus assistive technologies such as screen
+#. * readers are expected to present this string alone or as a token in
+#. * a list.
+#.
+#: atk/atkvalue.c:246
+msgid "high"
+msgstr "hoog"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a volume slider. Note that what such a widget
+#. * presents (e.g. temperature, volume, price) is controlled by
+#. * application developers. Thus assistive technologies such as screen
+#. * readers are expected to present this string alone or as a token in
+#. * a list.
+#.
+#: atk/atkvalue.c:254
+msgid "very high"
+msgstr "baie hoog"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a hard drive usage. Note that what such a widget
+#. * presents (e.g. hard drive usage, network traffic) is controlled by
+#. * application developers. Thus assistive technologies such as screen
+#. * readers are expected to present this string alone or as a token in
+#. * a list.
+#.
+#: atk/atkvalue.c:262
+msgid "very bad"
+msgstr "baie sleg"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a hard drive usage. Note that what such a widget
+#. * presents (e.g. hard drive usage, network traffic) is controlled by
+#. * application developers. Thus assistive technologies such as screen
+#. * readers are expected to present this string alone or as a token in
+#. * a list.
+#.
+#: atk/atkvalue.c:270
+msgid "bad"
+msgstr "swak"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a hard drive usage. Note that what such a widget
+#. * presents (e.g. hard drive usage, network traffic) is controlled by
+#. * application developers. Thus assistive technologies such as screen
+#. * readers are expected to present this string alone or as a token in
+#. * a list.
+#.
+#: atk/atkvalue.c:278
+msgid "good"
+msgstr "goed"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a hard drive usage. Note that what such a widget
+#. * presents (e.g. hard drive usage, network traffic) is controlled by
+#. * application developers. Thus assistive technologies such as screen
+#. * readers are expected to present this string alone or as a token in
+#. * a list.
+#.
+#: atk/atkvalue.c:286
+msgid "very good"
+msgstr "baie goed"
+
+#. Translators: This string describes a range within value-related
+#. * widgets such as a hard drive usage. Note that what such a widget
+#. * presents (e.g. hard drive usage, network traffic) is controlled by
+#. * application developers. Thus assistive technologies such as screen
+#. * readers are expected to present this string alone or as a token in
+#. * a list.
+#.
+#: atk/atkvalue.c:294
+msgid "best"
+msgstr "beste"
+
+#~ msgid "Is used to notify that the parent has changed"
+#~ msgstr "Word gebruik om aan te gee dat die ouer is verander"
