@@ -1,6 +1,0 @@
-[options]
-docs = false
-introspection = false
-
-[properties]
-
