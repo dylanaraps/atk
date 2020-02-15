@@ -18,23 +18,11 @@
  */
 
 #include "config.h"
-
 #include "atkmisc.h"
-
-/**
- * SECTION:atkmisc
- * @Short_description: A set of ATK utility functions for thread locking
- * @Title:AtkMisc
- *
- * A set of utility functions for thread locking. This interface and
- * all his related methods are deprecated since 2.12.
- */
 
 static void atk_misc_class_init (AtkMiscClass *klass);
 
-GType
-atk_misc_get_type (void)
-{
+GType atk_misc_get_type(void) {
   static GType type = 0;
 
   if (!type)
@@ -56,94 +44,14 @@ atk_misc_get_type (void)
   return type;
 }
 
-static void
-atk_misc_class_init (AtkMiscClass *klass)
-{
-  klass->threads_enter = NULL;
-  klass->threads_leave = NULL;
-}
+static void atk_misc_class_init (AtkMiscClass *klass) {}
 
-/**
- * atk_misc_threads_enter:
- * @misc: an AtkMisc instance for this application. 
- *
- * Take the thread mutex for the GUI toolkit, 
- * if one exists. 
- * (This method is implemented by the toolkit ATK implementation layer;
- *  for instance, for GTK+, GAIL implements this via GDK_THREADS_ENTER).
- *
- * Deprecated: Since 2.12.
- *
- * Since: 1.13
- *
- **/
-void
-atk_misc_threads_enter (AtkMisc *misc)
-{
-  AtkMiscClass *klass;
+void atk_misc_threads_enter(AtkMisc *misc) {}
 
-  if (misc == NULL)
-    return;
-
-  klass = ATK_MISC_GET_CLASS (misc);
-
-  if (klass->threads_enter)
-    {
-      klass->threads_enter (misc);
-    }
-}
-
-/**
- * atk_misc_threads_leave:
- * @misc: an AtkMisc instance for this application. 
- *
- * Release the thread mutex for the GUI toolkit, 
- * if one exists. This method, and atk_misc_threads_enter, 
- * are needed in some situations by threaded application code which 
- * services ATK requests, since fulfilling ATK requests often
- * requires calling into the GUI toolkit.  If a long-running or
- * potentially blocking call takes place inside such a block, it should
- * be bracketed by atk_misc_threads_leave/atk_misc_threads_enter calls.
- * (This method is implemented by the toolkit ATK implementation layer;
- *  for instance, for GTK+, GAIL implements this via GDK_THREADS_LEAVE).
- *
- * Deprecated: Since 2.12.
- *
- * Since: 1.13
- *
- **/
-void
-atk_misc_threads_leave (AtkMisc *misc)
-{
-  AtkMiscClass *klass;
-
-  if (misc == NULL)
-    return;
-
-  klass = ATK_MISC_GET_CLASS (misc);
-
-  if (klass->threads_leave)
-    {
-      klass->threads_leave (misc);
-    }
-}
+void atk_misc_threads_leave (AtkMisc *misc) {}
 
 AtkMisc *atk_misc_instance = NULL;
 
-/**
- * atk_misc_get_instance:
- *
- * Obtain the singleton instance of AtkMisc for this application.
- * 
- * Since: 1.13
- *
- * Deprecated: Since 2.12.
- *
- * Returns: The singleton instance of AtkMisc for this application.
- *
- **/
-const AtkMisc *
-atk_misc_get_instance (void)
-{
+const AtkMisc * atk_misc_get_instance(void) {
   return atk_misc_instance;
 }

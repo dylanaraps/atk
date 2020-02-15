@@ -18,31 +18,15 @@
  */
 
 #include "config.h"
-
 #include "atk.h"
 #include "atknoopobject.h"
-
-/**
- * SECTION:atknoopobject
- * @Short_description: An AtkObject which purports to implement all ATK interfaces.
- * @Title:AtkNoOpObject
- *
- * An AtkNoOpObject is an AtkObject which purports to implement all
- * ATK interfaces. It is the type of AtkObject which is created if an
- * accessible object is requested for an object type for which no
- * factory type is specified.
- *
- */
-
 
 static void atk_no_op_object_class_init (AtkNoOpObjectClass *klass);
 
 static gpointer parent_class = NULL;
 
 
-GType
-atk_no_op_object_get_type (void)
-{
+GType atk_no_op_object_get_type (void) {
   static GType type = 0;
 
   if (!type)
@@ -175,34 +159,9 @@ atk_no_op_object_get_type (void)
   return type;
 }
 
-static void
-atk_no_op_object_class_init (AtkNoOpObjectClass *klass)
-{
-  parent_class = g_type_class_peek_parent (klass);
-}
+static void atk_no_op_object_class_init(AtkNoOpObjectClass *klass) {}
 
-/**
- * atk_no_op_object_new:
- * @obj: a #GObject
- *
- * Provides a default (non-functioning stub) #AtkObject.
- * Application maintainers should not use this method. 
- *
- * Returns: a default (non-functioning stub) #AtkObject
- **/
-AtkObject*
-atk_no_op_object_new (GObject *obj)
-{
-  AtkObject *accessible;
-
-  g_return_val_if_fail (obj != NULL, NULL);
-
-  accessible = g_object_new (ATK_TYPE_NO_OP_OBJECT, NULL);
-  g_return_val_if_fail (accessible != NULL, NULL);
-
-  accessible->role = ATK_ROLE_INVALID;
-  accessible->layer = ATK_LAYER_INVALID;
-
-  return accessible;
+AtkObject* atk_no_op_object_new (GObject *obj) {
+  return NULL;
 }
 

@@ -18,20 +18,10 @@
  */
 
 #include "config.h"
-
 #include "atkobject.h"
 #include "atknoopobject.h"
 #include "atknoopobjectfactory.h"
 
-/**
- * SECTION:atknoopobjectfactory
- * @Short_description: The AtkObjectFactory which creates an AtkNoOpObject.
- * @Title:AtkNoOpObjectFactory
- *
- * The AtkObjectFactory which creates an AtkNoOpObject. An instance of
- * this is created by an AtkRegistry if no factory type has not been
- * specified to create an accessible object of a particular type.
- */
 static void atk_no_op_object_factory_class_init (
                               AtkNoOpObjectFactoryClass        *klass);
 
@@ -41,9 +31,7 @@ static GType      atk_no_op_object_factory_get_accessible_type (void);
 
 static gpointer    parent_class = NULL;
 
-GType
-atk_no_op_object_factory_get_type (void)
-{
+GType atk_no_op_object_factory_get_type(void) {
   static GType type = 0;
 
   if (!type) 
@@ -69,48 +57,16 @@ atk_no_op_object_factory_get_type (void)
   return type;
 }
 
-static void 
-atk_no_op_object_factory_class_init (AtkNoOpObjectFactoryClass *klass)
-{
-  AtkObjectFactoryClass *class = ATK_OBJECT_FACTORY_CLASS (klass);
+static void atk_no_op_object_factory_class_init (AtkNoOpObjectFactoryClass *klass){}
 
-  parent_class = g_type_class_peek_parent (klass);
-
-  class->create_accessible = atk_no_op_object_factory_create_accessible;
-  class->get_accessible_type = atk_no_op_object_factory_get_accessible_type;
-}
-
-/**
- * atk_no_op_object_factory_new:
- *
- * Creates an instance of an #AtkObjectFactory which generates primitive
- * (non-functioning) #AtkObjects. 
- *
- * Returns: an instance of an #AtkObjectFactory
- **/
-AtkObjectFactory* 
-atk_no_op_object_factory_new (void)
-{
-  GObject *factory;
-
-  factory = g_object_new (ATK_TYPE_NO_OP_OBJECT_FACTORY, NULL);
-
-  g_return_val_if_fail (factory != NULL, NULL);
-  return ATK_OBJECT_FACTORY (factory);
+AtkObjectFactory* atk_no_op_object_factory_new(void) {
+  return NULL;
 } 
 
-static AtkObject* 
-atk_no_op_object_factory_create_accessible (GObject   *obj)
-{
-  AtkObject     *accessible;
-
-  accessible = atk_no_op_object_new (obj);
-
-  return accessible;
+static AtkObject* atk_no_op_object_factory_create_accessible (GObject   *obj) {
+  return NULL;
 }
 
-static GType
-atk_no_op_object_factory_get_accessible_type (void)
-{
+static GType atk_no_op_object_factory_get_accessible_type(void) {
   return ATK_TYPE_NO_OP_OBJECT;
 }
