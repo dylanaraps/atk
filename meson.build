@@ -110,9 +110,3 @@ root_inc = include_directories('.')
 atk_inc = include_directories('atk')
 
 subdir('atk')
-subdir('tests')
-subdir('po')
-
-if get_option('docs')
-  subdir('docs')
-endif
