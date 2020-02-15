@@ -25,8 +25,6 @@
 #include "atk-enum-types.h"
 #include "atkprivate.h"
 
-static GPtrArray *value_type_names = NULL;
-
 enum {
   VALUE_CHANGED,
   LAST_SIGNAL
@@ -50,8 +48,6 @@ N_("best")
 #endif
 
 static void atk_value_base_init (AtkValueIface *class);
-
-static guint atk_value_signals[LAST_SIGNAL] = {0};
 
 GType atk_value_get_type (void) {
   static GType type = 0;
@@ -117,8 +113,6 @@ GSList* atk_value_get_sub_ranges (AtkValue *obj) {
 void atk_value_set_value (AtkValue     *obj,
                      const gdouble new_value) {
 }
-
-static void initialize_value_type_names () { }
 
 const gchar* atk_value_type_get_name (AtkValueType value_type) {
   return NULL;

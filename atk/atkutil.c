@@ -33,7 +33,6 @@ struct _AtkUtilListenerInfo
   guint signal_id;
   gulong hook_id;
 };
-static GHashTable *listener_list = NULL;
 
 GType atk_util_get_type (void) {
   static GType type = 0;
@@ -57,20 +56,6 @@ GType atk_util_get_type (void) {
   return type;
 }
 
-/*
- * This file supports the addition and removal of multiple focus handlers
- * as long as they are all called in the same thread.
- */
-static AtkEventListenerInit  focus_tracker_init = (AtkEventListenerInit) NULL;
-
-static gboolean init_done = FALSE;
-
-/*
- * Array of FocusTracker structs
- */
-static GArray *trackers = NULL;
-static guint  global_index = 0;
-
 typedef struct _FocusTracker FocusTracker;
 
 struct _FocusTracker {
@@ -90,19 +75,6 @@ void atk_remove_focus_tracker (guint            tracker_id) {
 }
 
 void atk_focus_tracker_notify (AtkObject       *object) {
-}
-
-static guint add_listener (GSignalEmissionHook listener,
-              const gchar         *object_type,
-              const gchar         *signal_name,
-              const gchar         *detail_string,
-              const gchar         *hook_data) {
-  return 0;
-}
-
-static guint atk_util_real_add_global_event_listener (GSignalEmissionHook listener,
-                                         const gchar *event_type) {
-  return 0;
 }
 
 guint atk_add_global_event_listener (GSignalEmissionHook listener,

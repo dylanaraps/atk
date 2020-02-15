@@ -43,16 +43,7 @@ static void atk_hyperlink_class_init (AtkHyperlinkClass *klass);
 static void atk_hyperlink_init       (AtkHyperlink      *link,
                                       AtkHyperlinkClass *klass);
 
-static void atk_hyperlink_real_get_property (GObject            *object,
-                                             guint              prop_id,
-                                             GValue             *value,
-                                             GParamSpec         *pspec);
-
 static void atk_hyperlink_action_iface_init (AtkActionIface *iface);
-
-static guint atk_hyperlink_signals[LAST_SIGNAL] = { 0, };
-
-static gpointer  parent_class = NULL;
 
 GType atk_hyperlink_get_type(void) {
   static GType type = 0;
@@ -89,13 +80,6 @@ static void atk_hyperlink_class_init (AtkHyperlinkClass *klass) {
 }
 
 static void atk_hyperlink_init(AtkHyperlink *link, AtkHyperlinkClass *klass) {
-}
-
-static void atk_hyperlink_real_get_property(GObject *object,
-                                 guint      prop_id,
-                                 GValue     *value,
-                                 GParamSpec *pspec)
-{
 }
 
 gchar* atk_hyperlink_get_uri (AtkHyperlink *link, gint i) {

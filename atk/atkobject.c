@@ -28,8 +28,6 @@
 #include "atkmarshal.h"
 #include "atkprivate.h"
 
-static GPtrArray *role_names = NULL;
-
 enum
 {
   PROP_0,  /* gobject convention */
@@ -195,63 +193,6 @@ static gint AtkObject_private_offset;
 static void            atk_object_class_init        (AtkObjectClass  *klass);
 static void            atk_object_init              (AtkObject       *accessible,
                                                      AtkObjectClass  *klass);
-static AtkRelationSet* atk_object_real_ref_relation_set 
-                                                    (AtkObject       *accessible);
-static void            atk_object_real_initialize   (AtkObject       *accessible,
-                                                     gpointer        data);
-static void            atk_object_real_set_property (GObject         *object,
-                                                     guint            prop_id,
-                                                     const GValue    *value,
-                                                     GParamSpec      *pspec);
-static void            atk_object_real_get_property (GObject         *object,
-                                                     guint            prop_id,
-                                                     GValue          *value,
-                                                     GParamSpec      *pspec);
-static void            atk_object_finalize          (GObject         *object);
-static const gchar*    atk_object_real_get_name     (AtkObject       *object);
-static const gchar*    atk_object_real_get_description
-                                                   (AtkObject       *object);
-static AtkObject*      atk_object_real_get_parent  (AtkObject       *object);
-static AtkRole         atk_object_real_get_role    (AtkObject       *object);
-static AtkLayer        atk_object_real_get_layer   (AtkObject       *object);
-static AtkStateSet*    atk_object_real_ref_state_set
-                                                   (AtkObject       *object);
-static void            atk_object_real_set_name    (AtkObject       *object,
-                                                    const gchar     *name);
-static void            atk_object_real_set_description
-                                                   (AtkObject       *object,
-                                                    const gchar     *description);
-static void            atk_object_real_set_parent  (AtkObject       *object,
-                                                    AtkObject       *parent);
-static void            atk_object_real_set_role    (AtkObject       *object,
-                                                    AtkRole         role);
-static void            atk_object_notify           (GObject         *obj,
-                                                    GParamSpec      *pspec);
-static const gchar*    atk_object_real_get_object_locale
-                                                   (AtkObject       *object);
-
-static guint atk_object_signals[LAST_SIGNAL] = { 0, };
-
-static gpointer parent_class = NULL;
-
-static const gchar* const atk_object_name_property_name = "accessible-name";
-static const gchar* const atk_object_name_property_description = "accessible-description";
-static const gchar* const atk_object_name_property_parent = "accessible-parent";
-static const gchar* const atk_object_name_property_value = "accessible-value";
-static const gchar* const atk_object_name_property_role = "accessible-role";
-static const gchar* const atk_object_name_property_component_layer = "accessible-component-layer";
-static const gchar* const atk_object_name_property_component_mdi_zorder = "accessible-component-mdi-zorder";
-static const gchar* const atk_object_name_property_table_caption = "accessible-table-caption";
-static const gchar* const atk_object_name_property_table_column_description = "accessible-table-column-description";
-static const gchar* const atk_object_name_property_table_column_header = "accessible-table-column-header";
-static const gchar* const atk_object_name_property_table_row_description = "accessible-table-row-description";
-static const gchar* const atk_object_name_property_table_row_header = "accessible-table-row-header";
-static const gchar* const atk_object_name_property_table_summary = "accessible-table-summary";
-static const gchar* const atk_object_name_property_table_caption_object = "accessible-table-caption-object";
-static const gchar* const atk_object_name_property_hypertext_num_links = "accessible-hypertext-nlinks";
-
-static void initialize_role_names() {}
-
 GType atk_object_get_type(void) {
   static GType type = 0;
 
@@ -376,10 +317,6 @@ guint atk_object_connect_property_change_handler (AtkObject *accessible,
 void atk_object_remove_property_change_handler  (AtkObject *accessible,
                                             guint      handler_id) {}
 
-void atk_object_notify_state_change (AtkObject *accessible,
-                                AtkState  state,
-                                gboolean  value) {}
-
 AtkObject * atk_implementor_ref_accessible (AtkImplementor *implementor) {
   return NULL;
 }
@@ -388,73 +325,8 @@ AtkAttributeSet * atk_object_get_attributes (AtkObject *accessible) {
     return NULL;
 }
 
-static AtkRelationSet* atk_object_real_ref_relation_set(AtkObject *accessible) {
-  return NULL;
-}
-
-static void atk_object_real_set_property (GObject      *object,
-                              guint         prop_id,
-                              const GValue *value,
-                              GParamSpec   *pspec) {}
-
-static void atk_object_real_get_property (GObject      *object,
-                              guint         prop_id,
-                              GValue       *value,
-                              GParamSpec   *pspec) {}
-
-static void atk_object_finalize(GObject *object) { }
-
-static const gchar* atk_object_real_get_name(AtkObject *object) {
-  return object->name;
-}
-
-static const gchar* atk_object_real_get_description (AtkObject *object) {
-  return object->description;
-}
-
-static AtkObject* atk_object_real_get_parent(AtkObject *object) {
-  return atk_object_peek_parent (object);
-}
-
-static AtkRole atk_object_real_get_role (AtkObject *object) {
-  return object->role;
-}
-
-static AtkLayer atk_object_real_get_layer(AtkObject *object) {
-  return object->layer;
-}
-
-static AtkStateSet* atk_object_real_ref_state_set(AtkObject *accessible) {
-  AtkStateSet *state_set;
-
-  state_set = atk_state_set_new ();
-
-  return state_set; 
-}
-
-static void atk_object_real_set_name (AtkObject       *object,
-                          const gchar     *name) {
-}
-
-static void atk_object_real_set_description (AtkObject       *object,
-                                 const gchar     *description) {}
-
-static void atk_object_real_set_parent (AtkObject       *object,
-                            AtkObject       *parent) {}
-
-static void
-atk_object_real_set_role (AtkObject *object,
-                          AtkRole   role)
-{
-  object->role = role;
-}
-
 void atk_object_initialize (AtkObject  *accessible,
                        gpointer   data) { }
-
-static void atk_object_notify (GObject     *obj,
-                   GParamSpec  *pspec) {
-}
 
 const gchar* atk_role_get_name (AtkRole role) {
   return NULL;
@@ -462,10 +334,6 @@ const gchar* atk_role_get_name (AtkRole role) {
 
 const gchar* atk_role_get_localized_name(AtkRole role) {
   return NULL;
-}
-
-static const gchar* atk_object_real_get_object_locale (AtkObject *object) {
-  return setlocale (LC_MESSAGES, NULL);
 }
 
 const gchar* atk_object_get_object_locale(AtkObject *accessible) {
@@ -495,9 +363,4 @@ const gchar* atk_object_get_accessible_id(AtkObject *accessible) {
 }
 
 void atk_object_set_accessible_id(AtkObject *accessible, const gchar *id) {
-}
-
-static void
-atk_object_real_initialize (AtkObject *accessible,
-                            gpointer  data) {
 }

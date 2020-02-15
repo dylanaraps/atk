@@ -21,10 +21,7 @@
 #include <glib-object.h>
 #include "atk.h"
 
-static gpointer parent_class = NULL;
-
 static void atk_relation_set_class_init (AtkRelationSetClass  *klass);
-static void atk_relation_set_finalize   (GObject              *object);
 
 GType atk_relation_set_get_type (void) {
   static GType type = 0;
@@ -83,9 +80,6 @@ AtkRelation* atk_relation_set_get_relation (AtkRelationSet *set,
 AtkRelation* atk_relation_set_get_relation_by_type (AtkRelationSet  *set,
                                        AtkRelationType relationship)  {
   return NULL;
-}
-
-static void atk_relation_set_finalize(GObject *object) {
 }
 
 void atk_relation_set_add_relation_by_type (AtkRelationSet  *set,

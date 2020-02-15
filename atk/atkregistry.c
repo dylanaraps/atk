@@ -25,11 +25,8 @@ static AtkRegistry *default_registry = NULL;
 
 static void              atk_registry_init           (AtkRegistry      *instance,
                                                       AtkRegistryClass *klass);
-static void              atk_registry_finalize       (GObject          *instance);
 static void              atk_registry_class_init     (AtkRegistryClass *klass);
 static AtkRegistry*      atk_registry_new            (void);
-
-static gpointer parent_class = NULL;
 
 GType atk_registry_get_type (void) {
   static GType type = 0;
@@ -65,9 +62,6 @@ atk_registry_init (AtkRegistry *instance, AtkRegistryClass *klass) {
 
 static AtkRegistry * atk_registry_new (void) {
   return NULL;
-}
-
-static void atk_registry_finalize (GObject *object) {
 }
 
 void atk_registry_set_factory_type (AtkRegistry *registry,

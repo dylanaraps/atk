@@ -27,27 +27,6 @@ enum {
 
 static void       atk_component_base_init (AtkComponentIface *class);
 
-static gboolean   atk_component_real_contains                (AtkComponent *component,
-                                                              gint         x,
-                                                              gint         y,
-                                                              AtkCoordType coord_type);
-
-static AtkObject* atk_component_real_ref_accessible_at_point (AtkComponent *component,
-                                                              gint         x,
-                                                              gint         y,
-                                                              AtkCoordType coord_type);
-
-static void      atk_component_real_get_position             (AtkComponent *component,
-                                                              gint         *x,
-                                                              gint         *y,
-                                                              AtkCoordType coord_type);
-
-static void      atk_component_real_get_size                 (AtkComponent *component,
-                                                              gint         *width,
-                                                              gint         *height);
-
-static guint atk_component_signals[LAST_SIGNAL] = { 0 };
-
 GType atk_component_get_type(void) {
   static GType type = 0;
 
@@ -143,42 +122,6 @@ gboolean atk_component_scroll_to (AtkComponent *component, AtkScrollType type) {
 
 gboolean atk_component_scroll_to_point (AtkComponent *component, AtkCoordType coords, gint x, gint y) {
   return FALSE;
-}
-
-static gboolean atk_component_real_contains(AtkComponent *component,
-                             gint         x,
-                             gint         y,
-                             AtkCoordType coord_type) {
-    return FALSE;
-}
-
-static AtkObject* atk_component_real_ref_accessible_at_point(AtkComponent *component,
-                                            gint         x,
-                                            gint         y,
-                                            AtkCoordType coord_type) {
-  return NULL;
-}
-
-static void
-atk_component_real_get_position (AtkComponent *component,
-                                 gint         *x,
-                                 gint         *y,
-                                 AtkCoordType coord_type)
-{
-}
-
-static void
-atk_component_real_get_size (AtkComponent *component,
-                             gint         *width,
-                             gint         *height)
-{
-}
-
-static AtkRectangle * atk_rectangle_copy (const AtkRectangle *rectangle) {
-  AtkRectangle *result = g_new (AtkRectangle, 1);
-  *result = *rectangle;
-
-  return result;
 }
 
 GType atk_rectangle_get_type (void) {

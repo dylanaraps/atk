@@ -35,12 +35,6 @@ enum {
   LAST_SIGNAL
 };
 
-static guint atk_window_signals[LAST_SIGNAL] = { 0 };
-
-static guint atk_window_add_signal (const gchar *name) {
-  return 0;
-}
-
 typedef AtkWindowIface AtkWindowInterface;
 G_DEFINE_INTERFACE (AtkWindow, atk_window, ATK_TYPE_OBJECT)
 

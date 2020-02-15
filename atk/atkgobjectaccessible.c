@@ -23,13 +23,6 @@
 #include <atk/atkutil.h>
 
 static void       atk_gobject_accessible_class_init       (AtkGObjectAccessibleClass   *klass);
-static void       atk_real_gobject_accessible_initialize  (AtkObject         *atk_obj,
-                                                           gpointer          data);
-static void       atk_gobject_accessible_object_gone_cb   (gpointer          data);
-
-static GQuark quark_accessible_object = 0;
-static GQuark quark_object = 0;
-static gpointer parent_class = NULL;
 
 GType atk_gobject_accessible_get_type(void) {
   static GType type = 0;
@@ -65,16 +58,6 @@ GObject * atk_gobject_accessible_get_object (AtkGObjectAccessible *obj){
   return NULL;
 }
  
-static void atk_real_gobject_accessible_initialize (AtkObject  *atk_obj,
-                                        gpointer   data) {
-}
-
-static void atk_gobject_accessible_object_gone_cb (gpointer  data) {
-}
-
-static void atk_gobject_accessible_dispose (GObject *atk_obj) {
-}
-
 static void atk_gobject_accessible_class_init (AtkGObjectAccessibleClass *klass)
 { 
 }

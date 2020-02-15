@@ -33,18 +33,6 @@ G_DEFINE_TYPE_WITH_CODE (AtkPlug, atk_plug, ATK_TYPE_OBJECT,
                          G_IMPLEMENT_INTERFACE (ATK_TYPE_COMPONENT, atk_component_interface_init)
                          G_ADD_PRIVATE(AtkPlug))
 
-static AtkObject* atk_plug_ref_child (AtkObject *obj, int i) {
-    return NULL;
-}
-
-static int atk_plug_get_n_children (AtkObject *obj) {
-    return 0;
-}
-
-static AtkStateSet* atk_plug_ref_state_set(AtkObject *obj) {
-    return NULL;
-}
-
 static void atk_plug_init(AtkPlug* obj) { }
 
 static void atk_plug_class_init(AtkPlugClass* klass) {

@@ -21,11 +21,7 @@
 #include "atk.h"
 #include <string.h>
 
-static guint last_type = ATK_STATE_LAST_DEFINED;
-
 #define NUM_POSSIBLE_STATES               (sizeof(AtkState)*8)
-
-static gchar* state_names[NUM_POSSIBLE_STATES];
 
 AtkStateType atk_state_type_register(const gchar *name) {
   return ATK_STATE_INVALID;

@@ -30,23 +30,7 @@ enum {
   PROP_LAST
 };
 
-static GPtrArray *extra_names = NULL;
-
-static gpointer parent_class = NULL;
-  
 static void atk_relation_class_init   (AtkRelationClass *klass);
-static void atk_relation_finalize     (GObject          *object);
-static void atk_relation_set_property (GObject          *object,
-                                       guint            prop_id,
-                                       const GValue     *value,
-                                       GParamSpec       *pspec);
-static void atk_relation_get_property (GObject          *object,
-                                       guint            prop_id,
-                                       GValue           *value,
-                                       GParamSpec       *pspec);
-
-static GPtrArray* atk_relation_get_ptr_array_from_value_array (GValueArray *array);
-static GValueArray* atk_relation_get_value_array_from_ptr_array (GPtrArray *array);
 
 GType atk_relation_get_type(void) {
   static GType type = 0;
@@ -98,10 +82,6 @@ GPtrArray* atk_relation_get_target (AtkRelation *relation) {
   return NULL;
 }
 
-static void delete_object_while_in_relation (gpointer callback_data,
-                                 GObject *where_the_object_was) {
-}
-
 void atk_relation_add_target (AtkRelation *relation,
                          AtkObject   *target) {
 }
@@ -109,53 +89,4 @@ void atk_relation_add_target (AtkRelation *relation,
 gboolean atk_relation_remove_target (AtkRelation *relation,
                             AtkObject *target) {
   return FALSE;
-}
-
-static void atk_relation_finalize(GObject *object) {
-}
-
-static void atk_relation_set_property(GObject       *object,
-                           guint         prop_id,
-                           const GValue  *value,
-                           GParamSpec    *pspec) {
-}
-
-static void atk_relation_get_property (GObject    *object,
-                           guint      prop_id,
-                           GValue     *value,
-                           GParamSpec *pspec) {
-}
-
-static GPtrArray* atk_relation_get_ptr_array_from_value_array (GValueArray *array) {
-  gint i;
-  GPtrArray *return_array;
-  GValue *value;
-  GObject *obj;
-
-  return_array = g_ptr_array_sized_new (array->n_values);
-  for (i = 0; i < array->n_values; i++)
-    {
-      value = g_value_array_get_nth (array, i);
-      obj = g_value_get_object (value);
-      g_ptr_array_add (return_array, obj);
-      g_object_weak_ref (obj, (GWeakNotify) delete_object_while_in_relation, return_array);
-    }
-      
-  return return_array;
-}
-
-static GValueArray* atk_relation_get_value_array_from_ptr_array (GPtrArray *array) {
-  int         i;
-  GValueArray *return_array;
-  GValue      *value;
-
-  return_array = g_value_array_new (array->len);
-  for (i = 0; i < array->len; i++)
-    {
-      value = g_new0 (GValue, 1);
-      g_value_init (value, ATK_TYPE_OBJECT);
-      g_value_set_object (value, g_ptr_array_index (array, i));
-      return_array = g_value_array_append (return_array, value);
-    }
-  return return_array;
 }

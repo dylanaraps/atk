@@ -22,8 +22,6 @@
 #include "atkmarshal.h"
 #include <string.h>
 
-static GPtrArray *extra_attributes = NULL;
-
 enum {
   TEXT_CHANGED,
   TEXT_CARET_MOVED,
@@ -34,93 +32,7 @@ enum {
   LAST_SIGNAL
 };
 
-static const char boolean[] =
-  "false\0"
-  "true";
-static const guint8 boolean_offsets[] = {
-  0, 6
-};
-
-static const char style[] =
-  "normal\0"
-  "oblique\0"
-  "italic";
-static const guint8 style_offsets[] = {
-  0, 7, 15
-};
-
-static const char variant[] =
-  "normal\0"
-  "small_caps";
-static const guint8 variant_offsets[] = {
-  0, 7
-};
-
-static const char stretch[] =
-  "ultra_condensed\0"
-  "extra_condensed\0"
-  "condensed\0"
-  "semi_condensed\0"
-  "normal\0"
-  "semi_expanded\0"
-  "expanded\0"
-  "extra_expanded\0"
-  "ultra_expanded";
-static const guint8 stretch_offsets[] = {
-  0, 16, 32, 42, 57, 64, 78, 87, 102
-};
-
-static const char justification[] =
-  "left\0"
-  "right\0"
-  "center\0"
-  "fill";
-static const guint8 justification_offsets[] = {
-  0, 5, 11, 18
-};
-
-static const char direction[] =
-  "none\0"
-  "ltr\0"
-  "rtl";
-static const guint8 direction_offsets[] = {
-  0, 5, 9
-};
-
-static const char wrap_mode[] =
-  "none\0"
-  "char\0"
-  "word\0"
-  "word_char";
-static const guint8 wrap_mode_offsets[] = {
-  0, 5, 10, 15
-};
-
-static const char underline[] =
-  "none\0"
-  "single\0"
-  "double\0"
-  "low\0"
-  "error";
-static const guint8 underline_offsets[] = {
-  0, 5, 12, 19, 23
-};
-
 static void atk_text_base_init (AtkTextIface *class);
-
-static void atk_text_real_get_range_extents  (AtkText          *text,
-                                              gint             start_offset,
-                                              gint             end_offset,
-                                              AtkCoordType     coord_type,
-                                              AtkTextRectangle *rect);
-
-static AtkTextRange** atk_text_real_get_bounded_ranges (AtkText          *text,
-                                                        AtkTextRectangle *rect,
-                                                        AtkCoordType     coord_type,
-                                                        AtkTextClipType  x_clip_type,
-                                                        AtkTextClipType  y_clip_type);
-
-static guint atk_text_signals[LAST_SIGNAL] = { 0 };
 
 GType atk_text_get_type (void) {
   static GType type = 0;
@@ -293,18 +205,6 @@ const gchar* atk_text_attribute_get_value (AtkTextAttribute attr,
     return NULL;
 }
 
-static void atk_text_rectangle_union (AtkTextRectangle *src1,
-                          AtkTextRectangle *src2,
-                          AtkTextRectangle *dest) {
-}
-
-static gboolean atk_text_rectangle_contain (AtkTextRectangle *clip,
-                            AtkTextRectangle *bounds,
-                            AtkTextClipType  x_clip_type,
-                            AtkTextClipType  y_clip_type) {
-  return 0;
-}
-
 gboolean atk_text_scroll_substring_to (AtkText       *text,
                               gint          start_offset,
                               gint          end_offset,
@@ -319,21 +219,6 @@ gboolean atk_text_scroll_substring_to_point (AtkText      *text,
                                     gint         x,
                                     gint         y) {
     return FALSE;
-}
-
-static void  atk_text_real_get_range_extents (AtkText           *text,
-                                 gint              start_offset,
-                                 gint              end_offset,
-                                 AtkCoordType      coord_type,
-                                 AtkTextRectangle  *rect) {
-}
-
-static AtkTextRange** atk_text_real_get_bounded_ranges (AtkText          *text,
-                                  AtkTextRectangle *rect,
-                                  AtkCoordType     coord_type,
-                                  AtkTextClipType  x_clip_type,
-                                  AtkTextClipType  y_clip_type) {
-  return NULL;
 }
 
 void atk_text_free_ranges (AtkTextRange **ranges) {

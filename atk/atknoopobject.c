@@ -23,9 +23,6 @@
 
 static void atk_no_op_object_class_init (AtkNoOpObjectClass *klass);
 
-static gpointer parent_class = NULL;
-
-
 GType atk_no_op_object_get_type (void) {
   static GType type = 0;
 

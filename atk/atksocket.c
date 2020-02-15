@@ -22,8 +22,6 @@
 #include "atk.h"
 #include "atksocket.h"
 
-static void atk_socket_finalize   (GObject *obj);
-
 static void atk_component_interface_init (AtkComponentIface *iface);
 
 static void atk_socket_component_real_get_extents (AtkComponent *component,
@@ -40,9 +38,6 @@ static void atk_socket_init(AtkSocket* obj) {
 }
 
 static void atk_socket_class_init (AtkSocketClass* klass) {
-}
-
-static void atk_socket_finalize (GObject *_obj) {
 }
 
 static void atk_component_interface_init (AtkComponentIface *iface) {

@@ -29,7 +29,6 @@ enum {
 };
 
 static void atk_document_base_init (AtkDocumentIface *class);
-static guint atk_document_signals[LAST_SIGNAL] = {0};
 
 GType atk_document_get_type(void) {
   static GType type = 0;
