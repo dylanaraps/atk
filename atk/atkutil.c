@@ -105,10 +105,6 @@ static guint atk_util_real_add_global_event_listener (GSignalEmissionHook listen
   return 0;
 }
 
-static void atk_util_real_remove_global_event_listener (guint remove_listener) {
-}
-
-
 guint atk_add_global_event_listener (GSignalEmissionHook listener,
 			       const gchar        *event_type) {
   return 0;
