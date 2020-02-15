@@ -174,24 +174,15 @@ atk_component_real_get_size (AtkComponent *component,
 {
 }
 
-static AtkRectangle *
-atk_rectangle_copy (const AtkRectangle *rectangle)
-{
+static AtkRectangle * atk_rectangle_copy (const AtkRectangle *rectangle) {
   AtkRectangle *result = g_new (AtkRectangle, 1);
   *result = *rectangle;
 
   return result;
 }
 
-GType
-atk_rectangle_get_type (void)
-{
+GType atk_rectangle_get_type (void) {
   static GType our_type = 0;
-
-  if (our_type == 0)
-    our_type = g_boxed_type_register_static ("AtkRectangle",
-                                             (GBoxedCopyFunc)atk_rectangle_copy,
-                                             (GBoxedFreeFunc)g_free);
   return our_type;
 }
 

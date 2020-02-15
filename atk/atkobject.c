@@ -426,13 +426,8 @@ static AtkLayer atk_object_real_get_layer(AtkObject *object) {
 
 static AtkStateSet* atk_object_real_ref_state_set(AtkObject *accessible) {
   AtkStateSet *state_set;
-  AtkObject *focus_object;
 
   state_set = atk_state_set_new ();
-
-  focus_object = atk_get_focus_object ();
-  if (focus_object == accessible)
-    atk_state_set_add_state (state_set, ATK_STATE_FOCUSED);
 
   return state_set; 
 }
