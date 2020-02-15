@@ -18,30 +18,14 @@
  */
 
 #include "config.h"
-
 #include "atkobjectfactory.h"
 #include "atknoopobjectfactory.h"
-
-/**
- * SECTION:atkobjectfactory
- * @Short_description: The base object class for a factory used to
- *  create accessible objects for objects of a specific GType.
- * @Title:AtkObjectFactory
- *
- * This class is the base object class for a factory used to create an
- * accessible object for a specific GType. The function
- * atk_registry_set_factory_type() is normally called to store in the
- * registry the factory type to be used to create an accessible of a
- * particular GType.
- */
 
 static void atk_object_factory_class_init   (AtkObjectFactoryClass        *klass);
 
 static gpointer    parent_class = NULL;
 
-GType
-atk_object_factory_get_type (void)
-{
+GType atk_object_factory_get_type(void) {
   static GType type = 0;
 
   if (!type) {
@@ -64,84 +48,17 @@ atk_object_factory_get_type (void)
   return type;
 }
 
-static void 
-atk_object_factory_class_init (AtkObjectFactoryClass *klass)
-{
-  parent_class = g_type_class_peek_parent (klass);
-
+static void atk_object_factory_class_init(AtkObjectFactoryClass *klass) {
 }
 
-/**
- * atk_object_factory_create_accessible:
- * @factory: The #AtkObjectFactory associated with @obj's
- * object type
- * @obj: a #GObject 
- * 
- * Provides an #AtkObject that implements an accessibility interface 
- * on behalf of @obj
- *
- * Returns: (transfer full): an #AtkObject that implements an accessibility
- * interface on behalf of @obj
- **/
-AtkObject* 
-atk_object_factory_create_accessible (AtkObjectFactory *factory,
-                                      GObject          *obj)
-{
-  AtkObjectFactoryClass *klass;
-  AtkObject *accessible = NULL;
-
-  g_return_val_if_fail (ATK_IS_OBJECT_FACTORY (factory), NULL);
-  g_return_val_if_fail (G_IS_OBJECT (obj), NULL);
-
-  klass = ATK_OBJECT_FACTORY_GET_CLASS (factory);
-
-  if (klass->create_accessible)
-  {
-      accessible = klass->create_accessible (obj);
-  }
-  return accessible;
+AtkObject* atk_object_factory_create_accessible (AtkObjectFactory *factory,
+                                      GObject          *obj) {
+  return NULL;
 } 
 
-/**
- * atk_object_factory_invalidate:
- * @factory: an #AtkObjectFactory to invalidate
- *
- * Inform @factory that it is no longer being used to create
- * accessibles. When called, @factory may need to inform
- * #AtkObjects which it has created that they need to be re-instantiated.
- * Note: primarily used for runtime replacement of #AtkObjectFactorys
- * in object registries.
- **/
-void 
-atk_object_factory_invalidate (AtkObjectFactory *factory)
-{
-  AtkObjectFactoryClass *klass;
-
-  g_return_if_fail (ATK_OBJECT_FACTORY (factory));
-
-  klass = ATK_OBJECT_FACTORY_GET_CLASS (factory);
-  if (klass->invalidate)
-     (klass->invalidate) (factory);
+void atk_object_factory_invalidate (AtkObjectFactory *factory) {
 }
 
-/**
- * atk_object_factory_get_accessible_type:
- * @factory: an #AtkObjectFactory 
- *
- * Gets the GType of the accessible which is created by the factory. 
- * Returns: the type of the accessible which is created by the @factory.
- * The value G_TYPE_INVALID is returned if no type if found.
- **/
-GType
-atk_object_factory_get_accessible_type (AtkObjectFactory *factory)
-{
-  AtkObjectFactoryClass *klass;
-
-  g_return_val_if_fail (ATK_OBJECT_FACTORY (factory), G_TYPE_INVALID);
-
-  klass = ATK_OBJECT_FACTORY_GET_CLASS (factory);
-  if (klass->get_accessible_type)
-     return (klass->get_accessible_type) ();
-  else
-     return G_TYPE_INVALID;
+GType atk_object_factory_get_accessible_type(AtkObjectFactory *factory) {
+    return G_TYPE_INVALID;
 }

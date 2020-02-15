@@ -18,24 +18,8 @@
  */
 
 #include "config.h"
-
 #include "atkregistry.h"
 #include "atknoopobjectfactory.h"
-
-/**
- * SECTION:atkregistry
- * @Short_description: An object used to store the GType of the
- * factories used to create an accessible object for an object of a
- * particular GType.
- * @Title:AtkRegistry
- *
- * The AtkRegistry is normally used to create appropriate ATK "peers"
- * for user interface components.  Application developers usually need
- * only interact with the AtkRegistry by associating appropriate ATK
- * implementation classes with GObject classes via the
- * atk_registry_set_factory_type call, passing the appropriate GType
- * for application custom widget classes.
- */
 
 static AtkRegistry *default_registry = NULL;
 
@@ -47,9 +31,7 @@ static AtkRegistry*      atk_registry_new            (void);
 
 static gpointer parent_class = NULL;
 
-GType
-atk_registry_get_type (void)
-{
+GType atk_registry_get_type (void) {
   static GType type = 0;
 
   if (!type)
@@ -74,110 +56,27 @@ atk_registry_get_type (void)
   return type;
 }
 
-static void
-atk_registry_class_init (AtkRegistryClass *klass)
-{
-  GObjectClass *object_class = (GObjectClass *) klass;
-
-  parent_class = g_type_class_peek_parent (klass);
-
-  object_class->finalize = atk_registry_finalize;
+static void atk_registry_class_init (AtkRegistryClass *klass) {
 }
 
 static void
-atk_registry_init (AtkRegistry *instance, AtkRegistryClass *klass)
-{
-  instance->factory_type_registry = g_hash_table_new ((GHashFunc) NULL, 
-                                                      (GEqualFunc) NULL);
-  instance->factory_singleton_cache = g_hash_table_new ((GHashFunc) NULL, 
-                                                        (GEqualFunc) NULL);
+atk_registry_init (AtkRegistry *instance, AtkRegistryClass *klass) {
 }
 
-static AtkRegistry *
-atk_registry_new (void)
-{
-  GObject *object;
-
-  object = g_object_new (ATK_TYPE_REGISTRY, NULL);
-
-  g_return_val_if_fail (ATK_IS_REGISTRY (object), NULL);
-
-  return (AtkRegistry *) object;
+static AtkRegistry * atk_registry_new (void) {
+  return NULL;
 }
 
-static void
-atk_registry_finalize (GObject *object)
-{
-  AtkRegistry *registry = ATK_REGISTRY (object);
-
-  g_hash_table_destroy (registry->factory_type_registry);
-  g_hash_table_destroy (registry->factory_singleton_cache);
-
-  G_OBJECT_CLASS (parent_class)->finalize (object);
+static void atk_registry_finalize (GObject *object) {
 }
 
-/**
- * atk_registry_set_factory_type:
- * @registry: the #AtkRegistry in which to register the type association
- * @type: an #AtkObject type 
- * @factory_type: an #AtkObjectFactory type to associate with @type.  Must
- * implement AtkObject appropriate for @type.
- *
- * Associate an #AtkObjectFactory subclass with a #GType. Note:
- * The associated @factory_type will thereafter be responsible for
- * the creation of new #AtkObject implementations for instances
- * appropriate for @type.
- **/
-void
-atk_registry_set_factory_type (AtkRegistry *registry,
+void atk_registry_set_factory_type (AtkRegistry *registry,
                                GType type,
-                               GType factory_type)
-{
-  GType old_type;
-  gpointer value;
-  AtkObjectFactory *old_factory;
-
-  g_return_if_fail (ATK_IS_REGISTRY (registry));
-
-  value = g_hash_table_lookup (registry->factory_type_registry, 
-                                  (gpointer) type);
-  old_type = (GType) value;
-  if (old_type && old_type != factory_type)
-    {
-      g_hash_table_remove (registry->factory_type_registry, 
-                           (gpointer) type);
-      /*
-       * If the old factory was created, notify it that it has
-       * been replaced, then free it.
-       */
-      old_factory = g_hash_table_lookup (registry->factory_singleton_cache, 
-                                         (gpointer) old_type);
-      if (old_factory)
-        {
-          atk_object_factory_invalidate (old_factory);
-          g_type_free_instance ((GTypeInstance *) old_factory);
-        }
-    }
-  g_hash_table_insert (registry->factory_type_registry, 
-                       (gpointer) type, 
-                       (gpointer) factory_type);
+                               GType factory_type) {
 }
 
-/**
- * atk_registry_get_factory_type:
- * @registry: an #AtkRegistry
- * @type: a #GType with which to look up the associated #AtkObjectFactory
- * subclass
- *
- * Provides a #GType indicating the #AtkObjectFactory subclass
- * associated with @type.
- *
- * Returns: a #GType associated with type @type
- **/
-GType
-atk_registry_get_factory_type (AtkRegistry *registry,
-                               GType type)
-{
+GType atk_registry_get_factory_type (AtkRegistry *registry,
+                               GType type) {
   GType factory_type;
   gpointer value;
 
@@ -201,21 +100,8 @@ atk_registry_get_factory_type (AtkRegistry *registry,
   return factory_type;
 }
 
-/**
- * atk_registry_get_factory:
- * @registry: an #AtkRegistry
- * @type: a #GType with which to look up the associated #AtkObjectFactory
- *
- * Gets an #AtkObjectFactory appropriate for creating #AtkObjects
- * appropriate for @type.
- *
- * Returns: (transfer none): an #AtkObjectFactory appropriate for creating
- * #AtkObjects appropriate for @type.
- **/
-AtkObjectFactory*
-atk_registry_get_factory (AtkRegistry *registry,
-                          GType type)
-{
+AtkObjectFactory* atk_registry_get_factory (AtkRegistry *registry,
+                          GType type) {
   gpointer factory_pointer = NULL;
   GType factory_type;
 
@@ -249,23 +135,7 @@ atk_registry_get_factory (AtkRegistry *registry,
   return ATK_OBJECT_FACTORY (factory_pointer);
 }
 
-/**
- * atk_get_default_registry:
- *
- * Gets a default implementation of the #AtkObjectFactory/type
- * registry.
- * Note: For most toolkit maintainers, this will be the correct
- * registry for registering new #AtkObject factories. Following
- * a call to this function, maintainers may call atk_registry_set_factory_type()
- * to associate an #AtkObjectFactory subclass with the GType of objects
- * for whom accessibility information will be provided.
- *
- * Returns: (transfer full): a default implementation of the
- * #AtkObjectFactory/type registry
- **/
-AtkRegistry*
-atk_get_default_registry (void)
-{
+AtkRegistry* atk_get_default_registry(void) {
   if (!default_registry)
     {
       default_registry = atk_registry_new ();
